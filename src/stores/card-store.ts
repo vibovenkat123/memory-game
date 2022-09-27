@@ -5,7 +5,7 @@ type itemObj = {
   src:string;
 }
 export const useCardStore = defineStore('cardStore', () => {
-  const cardArray = ref([{name:'Vue', src:'src/assets/images/vue.png'}, {name:'Angular', src:'src/assets/images/angular.png'}, {name:'Create React App', src:'src/assets/images/create-react.svg'}, {name:'Chrome', src:'src/assets/images/chrome-logo.svg'}, {name:'Visual Studio Code', src:'src/assets/images/vscode.png'}, {name:'Vite (the best!!)', src:'src/assets/images/vite.png'}, {name:'Typescipt', src:'src/assets/images/typescript.png'}, {name:'Svelte', src:'src/assets/images/svelte.png'}, {name:'Github', src:'src/assets/images/github.png'}]);
+  const cardArray = ref([{name:'Vue', src:'src/assets/images/vue.png'}, {name:'Angular', src:'src/assets/images/angular.png'}, {name:'Create React App', src:'src/assets/images/create-react.svg'}, {name:'Chrome', src:'src/assets/images/chrome-logo.svg'}, {name:'Visual Studio Code', src:'src/assets/images/vscode.png'}, {name:'Vite', src:'src/assets/images/vite.png'}, {name:'Typescipt', src:'src/assets/images/typescript.png'}, {name:'Svelte', src:'src/assets/images/svelte.png'}, {name:'Github', src:'src/assets/images/github.png'}, {name:'Tailwind', src:'src/assets/images/tailwind.png'}, {name:'Node', src:'src/assets/images/node.png'}, {name:'Solid', src:'src/assets/images/solid.svg'}]);
   const clickedArray :Ref= ref([])
   const scores = ref({
     score:0,
