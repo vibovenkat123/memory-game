@@ -5,7 +5,7 @@ type itemObj = {
   src:string;
 }
 export const useCardStore = defineStore('cardStore', () => {
-  const cardArray= ref([]);
+  const cardArray = ref([{name:'Vue', src:'https://vuejs.org/images/logo.png'}, {name:'Pinia', src:'https://pinia.vuejs.org/logo.svg'}]);
   const clickedArray :Ref= ref([])
   const scores = ref({
     score:0,
@@ -19,10 +19,12 @@ export const useCardStore = defineStore('cardStore', () => {
       scores.value.score = 0;
       return;
     }
+    clickedArray.value.push(item)
+    scores.value.score ++;
     cardArray.value = cardArray.value
-    .map(value => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value)
+    .map((value: any)=> ({ value, sort: Math.random() }))
+    .sort((a: { sort: number; }, b: { sort: number; }) => a.sort - b.sort)
+    .map(({ value } : {value: any}) => value)
   }
   return {click, scores, cardArray, clickedArray}
 })
