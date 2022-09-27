@@ -17,6 +17,7 @@ export const useCardStore = defineStore('cardStore', () => {
         scores.value.highScore = scores.value.score
       }
       scores.value.score = 0;
+      clickedArray.value = []
       return;
     }
     clickedArray.value.push(item)
