@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref, type Ref } from "vue";
+import { ref, type Ref, watch} from "vue";
 type itemObj = {
   name:string;
   src:string;
@@ -11,9 +11,17 @@ export const useCardStore = defineStore('cardStore', () => {
     score:0,
     highScore:0
   })
+  watch(scores, 
+    (scoresVal) => {
+      localStorage.setItem('scores', JSON.stringify(scoresVal))
+  },
+  {deep:true})
+  if (localStorage.getItem('scores')){
+    scores.value.highScore = JSON.parse(localStorage.getItem('scores')!).highScore
+  }
   function click(item:itemObj){
     if (!(clickedArray.value.indexOf(item) < 0)) {
-      if (scores.value.highScore > scores.value.score){
+      if (scores.value.highScore < scores.value.score){
         scores.value.highScore = scores.value.score
       }
       scores.value.score = 0;
