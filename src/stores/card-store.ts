@@ -2,10 +2,10 @@ import { defineStore } from "pinia";
 import { ref, type Ref, watch} from "vue";
 type itemObj = {
   name:string;
-  src:string;
+  src:number;
 }
 export const useCardStore = defineStore('cardStore', () => {
-  const cardArray = ref([{name:'Vue', src:'/images/vue.png'}, {name:'Angular', src:'/images/angular.png'}, {name:'Create React App', src:'/images/create-react.svg'}, {name:'Chrome', src:'/images/chrome-logo.svg'}, {name:'Visual Studio Code', src:'/images/vscode.png'}, {name:'Vite', src:'/images/vite.png'}, {name:'Typescipt', src:'/images/typescript.png'}, {name:'Svelte', src:'/images/svelte.png'}, {name:'Github', src:'/images/github.png'}, {name:'Tailwind', src:'/images/tailwind.png'}, {name:'Node', src:'/images/node.png'}, {name:'Solid', src:'/images/solid.svg'}]);
+  const cardArray = ref([{name:'Vue', src:0}, {name:'Angular', src:1}, {name:'Create React App', src:2}, {name:'Chrome', src:3}, {name:'Visual Studio Code', src:4}, {name:'Vite', src:5}, {name:'Typescipt', src:6}, {name:'Svelte', src:7}, {name:'Github', src:8}, {name:'Tailwind', src:9}, {name:'Node', src:10}, {name:'Solid', src:11}]);
   const clickedArray :Ref= ref([])
   const scores = ref({
     score:0,
