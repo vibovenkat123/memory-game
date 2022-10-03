@@ -7,7 +7,7 @@ export const scores = writable({
 });
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function click(item: any) {
-  console.log((get(clickedArray).includes(item)))
+  console.log((get(clickedArray).includes(item)));
   if (get(clickedArray).includes(item)) {
     if (get(scores).highScore < get(scores).score) {
       scores.update(n => {
@@ -25,7 +25,7 @@ export function click(item: any) {
       return n;
     }
   );
-  console.log(clickedArray)
+  console.log(clickedArray);
   scores.update(n => {
     n.score++;
     return n;
@@ -37,5 +37,5 @@ export function click(item: any) {
     }
     return n;
   });
-  console.log(get(cardArray))
+  console.log(get(cardArray));
 }
