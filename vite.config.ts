@@ -1,15 +1,8 @@
-import { fileURLToPath, URL } from 'node:url'
+import { sveltekit } from '@sveltejs/kit/vite';
+import type { UserConfig } from 'vite';
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+const config: UserConfig = {
+	plugins: [sveltekit()]
+};
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue()],
-  base:'/memory-game/',
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
-})
+export default config;

@@ -1,5 +1,13 @@
-index.html
-public
-.vscode
+.DS_Store
 node_modules
-dist
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+src/app.html
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
